@@ -1,0 +1,2 @@
+class Postre < ApplicationRecord
+end
