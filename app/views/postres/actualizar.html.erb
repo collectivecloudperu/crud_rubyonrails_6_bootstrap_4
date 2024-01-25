@@ -166,93 +166,32 @@
               <div class="row">
 
                 <div class="col-md-12" align="left">
+
                         <div class="content-box-large">
+
                           <div class="panel-heading">
-                          <div class="panel-title"><h2>Actualizar</h2></div>              
-                          
-                        </div>
-                          <div class="panel-body">
 
-                            
+                              <div class="panel-title">
+                                  <h2>Actualizar</h2>
+                              </div>
 
-                            
+                          </div>
 
-                          
-                                                <div class="card-block">
-                                                    <section class="example">
-
-                                                    	
-<% @postres.each do |postres| %>
-
-    <form method="POST" action="/postres/editar/<%= postres.id %>" accept-charset="UTF-8" role="form" id="actualizarpostre" name="actualizarpostre" enctype="multipart/form-data">
-
-    <!-- Protección CSRF -->
-    <%= token_tag nil %> 
-
-        <div class="row">
-            <div class="col-md-12">
-                <section class="panel">
-                    <div class="panel-body">
-
-                        <div class="form-group">
-                            <label for="nombre" class="negrita">Nombre:</label>
-                            <div>
-                                <input class="form-control" placeholder="Torta de Chocolate" name="nombre" type="text" id="nombre" onload="crearUrlAmigable(this.value);" onkeypress="crearUrlAmigable(this.value);" value="<%= postres.nombre %>" required>
-                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="precio" class="negrita">Precio:</label>
-                            <div>
-                                <input class="form-control" placeholder="4.50" name="precio" type="text" id="precio" value="<%= postres.precio %>" required>
-                            </div>
-                        </div>
+                </div>
 
-                        <div class="form-group">
-                            <label for="stock" class="negrita">Stock:</label>
-                            <div>
-                                <input class="form-control" placeholder="40" name="stock" type="text" id="stock" value="<%= postres.stock %>" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="img" class="negrita">Selecciona una imagen:</label>
-                            <div>
-                                <input class="form-control" type="file" name="img" id="img" required>
-                                <br>
-                                <br> Imagen Actual:
-                                <br>
-                                <br>
-                                <img src="/assets/img/<%= postres.img %>" class="img-fluid" title="<%= postres.nombre %>" alt="<%= postres.nombre %>">
-
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="url" class="negrita">URL:</label>
-                            <div>
-                                <input type="text" class="form-control" name="url" id="url" value="<%= postres.url %>" readonly>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-info">Guardar</button>
-                        <%= link_to 'Cancelar', url_for(:back), class: "btn btn-warning" %>
-
-                            <br>
-                            <br>
-
-                    </div>
-                </section>
-            </div>
-        </div>
-    </form>
-
-<% end %>
+             </div>        
 
 
-                                                        <div class="row">
+    <div class="row">
     <div class="col-md-12">
-        <section class="panel">                        
+        <section class="panel">   
+
+            <% @postres.each do |postres| %>
+
+            <form method="POST" action="/postres/editar/<%= postres.id %>" accept-charset="UTF-8" role="form" id="actualizarpostre" name="actualizarpostre" enctype="multipart/form-data">
+
             <div class="panel-body">
 
                 <div class="form-group">
